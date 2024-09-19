@@ -1,5 +1,11 @@
 #! /bin/bash
 
+# Switch to NixOS Unastable Channel
+sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos
+sudo nix-channel --update
+sudo nixos-rebuild switch --upgrade
+
+
 # Create 'dotfiles' directory
 echo "Creating dotfiles Folder in $HOME..."
 mkdir -p $HOME/.dotfiles/nixos

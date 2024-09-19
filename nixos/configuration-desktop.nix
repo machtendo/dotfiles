@@ -146,7 +146,6 @@
    kdePackages.ksystemlog               # GUI System Log Viewer
    kdePackages.krdc                     # GUI Remote Desktop Client
    kdePackages.kleopatra                # GUI Certificate Manager
-   kdePackages.kmix                     # GUI Volume Control
    kdePackages.audiotube                # GUI YouTube Music Client
    kdePackages.plasmatube               # GUI YouTube Client
    kdePackages.okular                   # GUI Document Viewer
@@ -155,7 +154,7 @@
    syncthingtray                        # GUI Syncthing KDE Plasma Integration
   ];
 
-# Applications
+# Applications / Modules
   
   # Steam
   programs.steam.enable = true;
