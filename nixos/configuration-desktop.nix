@@ -16,9 +16,28 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Enable Flakes
+  # Set NixOS to Unstable Channel & Enable Flakes
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix = {
+    package = pkgs.nixUnstable;
+
+    # Enable flakes and other necessary options for Nixpkgs unstable
+    extraOptions = ''
+      experimental-features = nix-command flakes;
+    '';
+  };
+
+  nixpkgs = {
+    # Pin the unstable channel
+    config = {
+      allowUnfree = true;
+    };
+    overlays = [ (final: prev: {
+      nixpkgs = import (builtins.fetchTarball {
+        url = "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz";
+      }) {};
+    }) ];
+  };
 
   # Enable 32-Bit Support
   hardware.graphics.enable32Bit = true;
@@ -127,6 +146,7 @@
   # System Packages
   environment.systemPackages = with pkgs; [
    neovim          # CLI Text Editor
+   fastfetch       # CLI System Information
    wget            # CLI File Transfer
    curl            # CLI File Transfer
    kitty           # GUI Terminal Application
