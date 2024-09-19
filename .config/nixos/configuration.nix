@@ -18,13 +18,10 @@
 
   # Set NixOS to Unstable Channel & Enable Flakes
 
+  nix.settings.experimental-features = "nix-command flakes"
+
   nix = {
     package = pkgs.nixUnstable;
-
-    # Enable flakes and other necessary options for Nixpkgs unstable
-    extraOptions = ''
-      experimental-features = nix-command flakes;
-    '';
   };
 
   nixpkgs = {
