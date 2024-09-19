@@ -141,9 +141,6 @@
   
 # Packages
 
-  # Allow "Unfree" Packages
-  nixpkgs.config.allowUnfree = true;
-
   # System Packages
   environment.systemPackages = with pkgs; [
    neovim          # CLI Text Editor
