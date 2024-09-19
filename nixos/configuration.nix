@@ -10,7 +10,7 @@
       ./hardware-configuration.nix
     ];
 
-# System Settings
+# System Settings & Features
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -154,6 +154,7 @@
    kdePackages.kgpg                     # GUI Encryption Utility
    syncthingtray                        # GUI Syncthing KDE Plasma Integration
   ];
+
 # Applications
   
   # Steam
