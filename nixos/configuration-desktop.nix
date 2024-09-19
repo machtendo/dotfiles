@@ -135,6 +135,7 @@
       github-desktop      # GUI GitHub Client
       proton-pass         # GUI Proton Pass Desktop
       protonvpn-gui       # GUI Proton VPN
+      stow                # CLI Dotfiles Manager
     ];
   };
   
