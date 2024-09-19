@@ -16,28 +16,14 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Set NixOS to Unstable Channel & Enable Flakes
-
+  # Enable Flakes
   nix.settings.experimental-features = "nix-command flakes";
-
-  nix = {
-    package = pkgs.nix;
-  };
-
-  nixpkgs = {
-    # Pin the unstable channel
-    config = {
-      allowUnfree = true;
-    };
-    overlays = [ (final: prev: {
-      nixpkgs = import (builtins.fetchTarball {
-        url = "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz";
-      }) {};
-    }) ];
-  };
 
   # Enable 32-Bit Support
   hardware.graphics.enable32Bit = true;
+
+  # Allow Unfree Software
+  nixpkgs.config.allowUnfree = true;
 
   # Time Zone
   time.timeZone = "America/Chicago";
@@ -105,9 +91,7 @@
     #media-session.enable = true;
   };
 
-  # Touchpad
-
-  # Enable touchpad support (enabled default in most desktopManager).
+  # Touchpad Support
   services.xserver.libinput.enable = true;
 
   # User Accounts & User Packages
