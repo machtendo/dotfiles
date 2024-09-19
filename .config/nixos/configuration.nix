@@ -21,7 +21,7 @@
   nix.settings.experimental-features = "nix-command flakes";
 
   nix = {
-    package = pkgs.nixUnstable;
+    package = pkgs.nix;
   };
 
   nixpkgs = {
