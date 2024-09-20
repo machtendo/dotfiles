@@ -21,6 +21,6 @@
     ln -sf ~/.dotfiles/nixos/flake.lock ~/.config/home-manager/flake.lock
 
 # Rebuild
-sudo nixos-rebuild switch --upgrade
+sudo nixos-rebuild switch
 
 # End
