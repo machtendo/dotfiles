@@ -6,6 +6,18 @@
   home.username = "jas";
   home.homeDirectory = "/home/jas";
   
+  imports = [
+    <plasma-manager/modules>
+  ];
+
+  programs = {
+    plasma = {
+      enable = true;
+      # etc.
+    };
+  };
+
+
   programs.git = {
     enable = true;
     userName = "machtendo";
