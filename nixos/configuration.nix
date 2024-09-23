@@ -174,6 +174,9 @@
   # Steam
   programs.steam.enable = true;
 
+  # Virt-Manager for Virtualization
+  programs.virt-manager.enable = true;
+
   # SUID Wrappers
   # programs.mtr.enable = true;
   # programs.gnupg.agent = {
@@ -185,7 +188,6 @@
 
   # Enable Virtualization
   virtualisation.libvirtd.enable = true;
-  programs.virt-manager.enable = true;
     
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
