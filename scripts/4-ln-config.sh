@@ -11,6 +11,9 @@
     echo "Setting NixOS Soft Links..."
 
     sudo ln -sf ~/.dotfiles/nixos/configuration.nix /etc/nixos/configuration.nix
+
+    # Copy & Link hardware-configuration.nix
+    cp /etc/nixos/hardware-configuration.nix ~/.dotfiles/nixos/harware-configuration.nix
     sudo ln -sf ~/.dotfiles/nixos/hardware-configuration.nix /etc/nixos/hardware-configuration.nix
 
     # NixOS Home Manager Configuration Files
