@@ -122,11 +122,10 @@
       vlc                 # GUI Video Player
       brave               # GUI Web Browser
       parsec-bin          # GUI Low-latency Remote Access Client
-      lutris              # Video Game Platform
+      heroic              # Video Game Platform
       chiaki              # GUI PS Remote Play Client
       godot_4             # GUI 2D/3D Game Engine
       vscode              # GUI Visual Studio Code, IDE
-      vscodium            # GUI Visual Studio Code, IDE, sans Microsoft
       qbittorrent         # GUI Torrent Client
       gimp                # GNU Image Manipulation Program
       obsidian            # GUI Note Taking, Knowledge Base Application
@@ -150,7 +149,6 @@
    curl            # CLI File Transfer
    kitty           # GUI Terminal Application
    git             # CLI Version Control
-   syncthing       # File Synchronization
 
   # Desktop Environment: KDE Plasma
    kdePackages.kate                     # GUI Text Editor, IDE
@@ -164,8 +162,6 @@
    kdePackages.ksystemlog               # GUI System Log Viewer
    kdePackages.krdc                     # GUI Remote Desktop Client
    kdePackages.kleopatra                # GUI Certificate Manager
-   kdePackages.audiotube                # GUI YouTube Music Client
-   kdePackages.plasmatube               # GUI YouTube Client
    kdePackages.okular                   # GUI Document Viewer
    kdePackages.gwenview                 # GUI Image Viewer
    kdePackages.kgpg                     # GUI Encryption Utility
@@ -191,6 +187,9 @@
 
   # Enable Tailscale
   services.tailscale.enable = true;
+
+  # Enable Syncthing
+  services.syncthing.enable = true;
 
 # End
 }
