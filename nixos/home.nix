@@ -7,7 +7,7 @@
   home.homeDirectory = "/home/jas";
   
   imports = [
-    <plasma-manager/modules>
+  #  <plasma-manager/modules>
   ];
 
   programs.git = {
