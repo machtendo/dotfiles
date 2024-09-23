@@ -149,6 +149,7 @@
    curl            # CLI File Transfer
    kitty           # GUI Terminal Application
    git             # CLI Version Control
+   qemu            # Virtual Machines
 
   # Desktop Environment: KDE Plasma
    kdePackages.kate                     # GUI Text Editor, IDE
@@ -181,6 +182,10 @@
   # };
 
 # Services
+
+  # Enable Virtualization
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
     
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
