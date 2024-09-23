@@ -117,7 +117,7 @@
   users.users.jas = {
     isNormalUser = true;
     description = "Jason";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd"];
     packages = with pkgs; [
       vlc                 # GUI Video Player
       brave               # GUI Web Browser
@@ -174,9 +174,6 @@
   # Steam
   programs.steam.enable = true;
 
-  # Virt-Manager for Virtualization
-  programs.virt-manager.enable = true;
-
   # SUID Wrappers
   # programs.mtr.enable = true;
   # programs.gnupg.agent = {
@@ -188,6 +185,14 @@
 
   # Enable Virtualization
   virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
+  
+  dconf.settings = {
+  "org/virt-manager/virt-manager/connections" = {
+    autoconnect = ["qemu:///system"];
+    uris = ["qemu:///system"];
+  };
+};
     
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
