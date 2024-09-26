@@ -57,3 +57,9 @@
     ln -sf ~/.dotfiles/nixos/home.nix ~/.config/home-manager/home.nix
     ln -sf ~/.dotfiles/nixos/flake.nix ~/.config/home-manager/flake.nix
     ln -sf ~/.dotfiles/nixos/flake.lock ~/.config/home-manager/flake.lock
+
+# NixOS Rebuild
+
+    echo "Final NixOS Rebuild..."
+
+    sudo nixos-rebuild switch
