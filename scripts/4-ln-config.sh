@@ -1,9 +1,11 @@
 #! /bin/bash
 
-# nix-shell -p git
-# cd ~
-# git clone https://github.com/machtendo/dotfiles.git
-# mv ~/dotfiles ~/.dotfiles
+nix-shell -p git
+cd ~
+git clone https://github.com/machtendo/dotfiles.git
+exit
+cd ~
+mv ~/dotfiles ~/.dotfiles
 
 # Create Links
 
