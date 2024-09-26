@@ -128,13 +128,11 @@
       vscode              # GUI Visual Studio Code, IDE
       qbittorrent         # GUI Torrent Client
       gimp                # GNU Image Manipulation Program
-      obsidian            # GUI Note Taking, Knowledge Base Application
       libreoffice         # GUI Productivity Suite
       betterdiscordctl    # GUI Discord Client
       github-desktop      # GUI GitHub Client
       proton-pass         # GUI Proton Pass Desktop
       protonvpn-gui       # GUI Proton VPN
-      stow                # CLI Dotfiles Manager
       protonup-qt         # GUI Manage Proton Compatibility
     ];
   };
