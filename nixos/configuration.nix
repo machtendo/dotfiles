@@ -129,7 +129,8 @@
       qbittorrent         # GUI Torrent Client
       gimp                # GNU Image Manipulation Program
       libreoffice         # GUI Productivity Suite
-      betterdiscordctl    # GUI Discord Client
+      discord             # GUI Discord Chat Client
+      betterdiscordctl    # Discord Modifications
       github-desktop      # GUI GitHub Client
       proton-pass         # GUI Proton Pass Desktop
       protonvpn-gui       # GUI Proton VPN
@@ -141,13 +142,14 @@
 
   # Packages - System Profile
   environment.systemPackages = with pkgs; [
-   neovim          # CLI Text Editor
-   fastfetch       # CLI System Information
-   wget            # CLI File Transfer
-   curl            # CLI File Transfer
-   kitty           # GUI Terminal Application
-   git             # CLI Version Control
-   qemu            # Virtual Machines
+   neovim             # CLI Text Editor
+   fastfetch          # CLI System Information
+   wget               # CLI File Transfer
+   curl               # CLI File Transfer
+   alacritty          # GUI Terminal Application
+   alacritty-theme    # Color Schemes for Alacritty
+   git                # CLI Version Control
+   qemu               # Virtual Machines
 
   # Desktop Environment: KDE Plasma
    kdePackages.kate                     # GUI Text Editor, IDE
