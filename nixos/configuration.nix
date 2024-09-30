@@ -29,7 +29,7 @@
   nixpkgs.config.allowUnfree = true;
 
   # Touchpad Support
-  services.xserver.libinput.enable = true;
+  services.libinput.enable = true;
 
   # Declared System Version
 
