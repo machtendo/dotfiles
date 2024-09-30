@@ -41,6 +41,18 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05";
 
+  # Optimization & Garbage Collection
+
+  # Optimiza Nix-Store During Rebuilds (Results in slower builds)
+  nix.settings.auto-optimise-store = true;
+  
+  # Purge Unused Nix-Store Entries
+  nix.gc = {
+    automatic = true;
+    interval = { Weekday = 0; Hour = 0; Minute = 0; };
+    options = "--delete-older-than 14d";
+  };
+
 # Networking
 
   # Enable Networking
