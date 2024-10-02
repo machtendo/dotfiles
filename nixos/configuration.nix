@@ -43,7 +43,8 @@
 
   # Optimization & Garbage Collection
 
-  # Optimiza Nix-Store During Rebuilds (Results in slower builds)
+  # Optimize Nix-Store During Rebuilds
+    # NOTE: Optimizes during builds - results in slower builds
   nix.settings.auto-optimise-store = true;
   
   # Purge Unused Nix-Store Entries
@@ -150,6 +151,7 @@
       proton-pass         # GUI Proton Pass Desktop
       protonvpn-gui       # GUI Proton VPN
       protonup-qt         # GUI Manage Proton Compatibility
+      starship            # Customizable Shell Prompt
     ];
   };
 
@@ -157,14 +159,15 @@
 
   # Packages - System Profile
   environment.systemPackages = with pkgs; [
-   neovim             # CLI Text Editor
-   fastfetch          # CLI System Information
-   wget               # CLI File Transfer
-   curl               # CLI File Transfer
    alacritty          # GUI Terminal Application
    alacritty-theme    # Color Schemes for Alacritty
+   curl               # CLI File Transfer
+   fastfetch          # CLI System Information
    git                # CLI Version Control
+   neovim             # CLI Text Editor
+   openssl            # SSL & TLS Encryption
    qemu               # Virtual Machines
+   wget               # CLI File Transfer
 
   # Desktop Environment: KDE Plasma
    kdePackages.kate                     # GUI Text Editor, IDE
