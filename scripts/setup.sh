@@ -93,11 +93,11 @@
     ln -sf ~/.dotfiles/nixos/flake.nix ~/.config/home-manager/flake.nix
     ln -sf ~/.dotfiles/nixos/flake.lock ~/.config/home-manager/flake.lock
 
-# NixOS Rebuild
+# NixOS Upgrade & Rebuild
 
     echo "Final NixOS Rebuild..."
 
-    sudo nixos-rebuild switch
+    sudo nixos-rebuild switch --upgrade
 
 # End
 
