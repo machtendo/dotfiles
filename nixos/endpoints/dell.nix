@@ -12,6 +12,10 @@
 
 # System Settings
 
+  # Enable the X11 windowing system.
+  # Required for SDDM - You can disable this if you're only using the Wayland session.
+  services.xserver.enable = true;
+  
   # Enable 32-Bit Support
   hardware.graphics.enable32Bit = true;
 
