@@ -61,7 +61,7 @@
 
 # Download Dotfiles from Github - Done Manually
     #    # Create Temporary Shell Using Git
-    #    nix-shell -p git
+    #    nix-shell -p git neovim
     #    # Ensure Home Directory
     #    cd ~
     #    # Clone Dotfiles Repository

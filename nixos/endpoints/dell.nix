@@ -34,7 +34,7 @@
 
 # Networking
   
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "nixtest"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -84,6 +84,8 @@
     description = "Jason";
     extraGroups = [ "networkmanager" "wheel" "libvirtd"];
     packages = with pkgs; [
+      alacritty           # GUI Terminal Application
+      alacritty-theme     # Color Schemes for Alacritty
       vlc                 # GUI Video Player
       brave               # GUI Web Browser
       parsec-bin          # GUI Low-latency Remote Access Client
@@ -101,6 +103,7 @@
       protonvpn-gui       # GUI Proton VPN
       protonup-qt         # GUI Manage Proton Compatibility
       starship            # Customizable Shell Prompt
+      qemu                # Virtual Machines
     ];
   };
 

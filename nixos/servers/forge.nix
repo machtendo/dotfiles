@@ -7,37 +7,9 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./nextcloud.nix
+      ./modules/nextcloud.nix
       #<agenix/modules/age.nix>
     ];
-    
-# System Settings
-
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  # NixOS Declared Version
-  system.stateVersion = "24.05";
-
-  # Set your time zone.
-  time.timeZone = "America/Chicago";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_US.UTF-8";
-    LC_IDENTIFICATION = "en_US.UTF-8";
-    LC_MEASUREMENT = "en_US.UTF-8";
-    LC_MONETARY = "en_US.UTF-8";
-    LC_NAME = "en_US.UTF-8";
-    LC_NUMERIC = "en_US.UTF-8";
-    LC_PAPER = "en_US.UTF-8";
-    LC_TELEPHONE = "en_US.UTF-8";
-    LC_TIME = "en_US.UTF-8";
-  };
 
 # Networking
 
@@ -66,17 +38,9 @@
     ];
   };
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   # Packages - System Profile
   environment.systemPackages = with pkgs; [
-   fastfetch
-   neovim
-   wget
-   curl
-   git
-   btop
+   #fastfetch
   ];
 
 # SUID Wrappers
@@ -89,9 +53,7 @@
 # Services
 
   # OpenSSH
-  services.openssh.enable = true;
   services.openssh.settings.PasswordAuthentication = true;
 
-  # Tailscale
-  services.tailscale.enable = true;
+# End
 }

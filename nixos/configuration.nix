@@ -92,14 +92,12 @@
 
   # Packages - System Profile
   environment.systemPackages = with pkgs; [
-   alacritty          # GUI Terminal Application
-   alacritty-theme    # Color Schemes for Alacritty
+   btop               # CLI System Process Monitor
    curl               # CLI File Transfer
    fastfetch          # CLI System Information
    git                # CLI Version Control
    neovim             # CLI Text Editor
    openssl            # SSL & TLS Encryption
-   qemu               # Virtual Machines
    wget               # CLI File Transfer
   ];
 
