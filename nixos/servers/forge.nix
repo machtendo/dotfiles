@@ -7,7 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./modules/nextcloud.nix
+      #./modules/nextcloud.nix
       #<agenix/modules/age.nix>
     ];
 
