@@ -10,6 +10,10 @@
       # ./hardware-configuration.nix
     ];
 
+# Drivers
+# Lenovo Legion - Power Management, Fan Control, RGB, 
+linuxKernel.packages.linux_latest_libre.lenovo-legion-module
+
 # System Settings
 
   # Enable the X11 windowing system.
@@ -24,7 +28,7 @@
 
 # Networking
   
-  networking.hostName = "titanix"; # Define your hostname.
+  networking.hostName = "legion"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -85,6 +89,7 @@
       vscode              # GUI Visual Studio Code, IDE
       qbittorrent         # GUI Torrent Client
       gimp                # GNU Image Manipulation Program
+      lenovo-legion       # Power, Fan, RGB Control for Lenovo Legion - https://github.com/johnfanv2/LenovoLegionLinux
       libreoffice         # GUI Productivity Suite
       discord             # GUI Discord Chat Client
       betterdiscordctl    # Discord Modifications
