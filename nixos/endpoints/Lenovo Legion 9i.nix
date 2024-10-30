@@ -14,6 +14,8 @@
 
 # nVidia - https://nixos.wiki/wiki/Nvidia
 
+  # GPU Passthrough - https://astrid.tech/2022/09/22/0/nixos-gpu-vfio/
+
   # Enable OpenGL
   hardware.opengl = {
     enable = true;
