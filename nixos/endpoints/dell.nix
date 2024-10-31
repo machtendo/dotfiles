@@ -126,6 +126,9 @@
   # Steam
   programs.steam.enable = true;
 
+  # direnv
+  programs.direnv.enable = true;
+
   # SUID Wrappers
   # programs.mtr.enable = true;
   # programs.gnupg.agent = {
