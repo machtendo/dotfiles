@@ -21,7 +21,7 @@
 
 # Boot - Splash Screen
 
-  boot.plymouth.enable = true;
+  boot.plymouth.theme = bgrt;
 
 # System Settings  
   
