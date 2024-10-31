@@ -99,6 +99,7 @@
    neovim             # CLI Text Editor
    openssl            # SSL & TLS Encryption
    wget               # CLI File Transfer
+   rustup             # Rust Toolchain Installer
   ];
 
 # Applications & Modules
