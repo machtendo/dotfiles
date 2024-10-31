@@ -94,6 +94,7 @@
       protonup-qt         # GUI Manage Proton Compatibility
       starship            # Customizable Shell Prompt
       qemu                # Virtual Machines
+      rustup              # Rust Toolchain Installer
     ];
   };
 
