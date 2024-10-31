@@ -19,6 +19,10 @@
       # ./endpoints/msi.nix
     ];
 
+# Boot - Splash Screen
+
+  boot.plymouth.enable = true;
+
 # System Settings  
   
   # Linux Kernel - Latest
