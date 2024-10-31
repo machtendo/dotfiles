@@ -15,7 +15,7 @@
       #./servers/forge.nix
 
       # Endpont Configuration Files
-      # ./endpoints/dell.nix
+      ./endpoints/dell.nix
       # ./endpoints/msi.nix
     ];
 
