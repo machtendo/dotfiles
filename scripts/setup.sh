@@ -43,55 +43,55 @@
 
     # Create Dotfiles Folder in HOME
 
-    #    mkdir -p ~/.dotfiles
+    #    mkdir -p $HOME/.dotfiles
 
     #    # NixOS Configuration Files
     
     #    echo "Moving NixOS Configuration Files..."
 
-    #    sudo mv /etc/nixos/configuration.nix ~/.dotfiles/nixos/
-    #    sudo mv /etc/nixos/hardware-configuration.nix ~/.dotfiles/nixos/
+    #    sudo mv /etc/nixos/configuration.nix $HOME/.dotfiles/nixos/
+    #    sudo mv /etc/nixos/hardware-configuration.nix $HOME/.dotfiles/nixos/
 
     #    # NixOS Home Manager Configuration Files
     #    echo "Moving Home Manager Configuration Files..."
 
-    #    mv ~/.config/home-manager/home.nix ~/.dotfiles/nixos/
-    #    mv ~/.config/home-manager/flake.nix ~/.dotfiles/nixos/
-    #    mv ~/.config/home-manager/flake.lock ~/.dotfiles/nixos/
+    #    mv $HOME/.config/home-manager/home.nix $HOME/.dotfiles/nixos/
+    #    mv $HOME/.config/home-manager/flake.nix $HOME/.dotfiles/nixos/
+    #    mv $HOME/.config/home-manager/flake.lock $HOME/.dotfiles/nixos/
 
 # Download Dotfiles from Github - Done Manually
     #    # Create Temporary Shell Using Git
     #    nix-shell -p git neovim
     #    # Ensure Home Directory
-    #    cd ~
+    #    cd $HOME
     #    # Clone Dotfiles Repository
     #    git clone https://github.com/machtendo/dotfiles.git
     #    # Exit nix-shell
     #    exit
     #    # Ensure Home Directory
-    #    cd ~
+    #    cd $HOME
     #    # Hide Dotfiles Folder
-    #    mv ~/dotfiles ~/.dotfiles
+    #    mv $HOME/dotfiles $HOME/.dotfiles
 
 # Link Dotfiles
 
     # Create Links - NixOS Configuration Files
     
     echo "Setting NixOS Soft Links..."
-    sudo ln -sf ~/.dotfiles/nixos/configuration.nix /etc/nixos/configuration.nix
+    sudo ln -sf $HOME/.dotfiles/nixos/configuration.nix /etc/nixos/configuration.nix
 
     # Move & Link hardware-configuration.nix
     
-    sudo mv /etc/nixos/hardware-configuration.nix ~/.dotfiles/nixos/hardware-configuration.nix
-    sudo ln -sf ~/.dotfiles/nixos/hardware-configuration.nix /etc/nixos/hardware-configuration.nix
+    sudo mv /etc/nixos/hardware-configuration.nix $HOME/.dotfiles/nixos/hardware-configuration.nix
+    sudo ln -sf $HOME/.dotfiles/nixos/hardware-configuration.nix /etc/nixos/hardware-configuration.nix
 
     # NixOS Home Manager Configuration Files
     
     echo "Setting Home Manager Soft Links..."
 
-    ln -sf ~/.dotfiles/nixos/home.nix ~/.config/home-manager/home.nix
-    ln -sf ~/.dotfiles/nixos/flake.nix ~/.config/home-manager/flake.nix
-    ln -sf ~/.dotfiles/nixos/flake.lock ~/.config/home-manager/flake.lock
+    ln -sf $HOME/.dotfiles/nixos/home.nix $HOME/.config/home-manager/home.nix
+    ln -sf $HOME/.dotfiles/nixos/flake.nix $HOME/.config/home-manager/flake.nix
+    ln -sf $HOME/.dotfiles/nixos/flake.lock $HOME/.config/home-manager/flake.lock
 
 # NixOS Upgrade & Rebuild
 
