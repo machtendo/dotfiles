@@ -22,7 +22,7 @@
 # Boot - Splash Screen
 
   boot.plymouth.enable = true;
-  boot.plymouth.theme = "rings";
+  boot.plymouth.theme = "bgrt";
 
 # System Settings  
   
