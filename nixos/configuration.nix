@@ -21,7 +21,7 @@
 
 # Boot - Splash Screen
 
-  boot.plymouth.theme = bgrt;
+  boot.plymouth.theme = "bgrt";
 
 # System Settings  
   
