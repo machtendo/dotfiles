@@ -10,8 +10,6 @@
       # ./hardware-configuration.nix
     ];
 
-# Drivers
-
 # Kernel / Boot
   
   # Install OVMF for UEFI support in Virtual Machines
@@ -35,7 +33,12 @@
     modules = [ "vfio-pci" ];
 };
 
-# nVidia - https://nixos.wiki/wiki/Nvidia
+# Drivers
+
+  # Touchpad Support
+  services.xserver.libinput.gestures = true;
+
+  # nVidia - https://nixos.wiki/wiki/Nvidia
 
   # GPU Passthrough - https://astrid.tech/2022/09/22/0/nixos-gpu-vfio/
 
@@ -109,7 +112,7 @@
 # Networking
   
   networking.hostName = "legion"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -117,7 +120,7 @@
 
   # Firewall
     # Firewall Status
-    # networking.firewall.enable = false;
+    networking.firewall.enable = true;
     # networking.firewall.allowedTCPPorts = [ ... ];
     # networking.firewall.allowedUDPPorts = [ ... ];
 
@@ -224,6 +227,9 @@ virtualisation.libvirtd = {
   enable = true;
   qemuPackage = pkgs.qemu_kvm;  # Ensure you use the KVM-enabled QEMU
 
+  # Enable OVMF for UEFI support in Virtual Machines
+  qemuOvmf.enable = true; # Add this line to enable OVMF
+
   # Find the path needed here with this command: nix-store -q --outputs $(nix-instantiate '<nixpkgs>' -A ovmf)
   extraConfig = ''
     nvram = "/nix/store/<path-to-ovmf>/OVMF_CODE.fd:/nix/store/<path-to-ovmf>/OVMF_VARS.fd";
@@ -250,6 +256,10 @@ virtualisation.libvirtd = {
   # Power Management for Intel CPUs
   services.thermald.enable = true;       # Thermal management to prevent overheating
   services.tlp.enable = true;            # Advanced power management for battery life
+
+  # Bluetooth
+  services.bluetooth.enable = true;
+  services.pipewire.bluetooth.enable = true;
 
 # End
 }
