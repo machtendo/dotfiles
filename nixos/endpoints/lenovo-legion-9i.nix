@@ -12,6 +12,29 @@
 
 # Drivers
 
+# Kernel / Boot
+  
+  # Install OVMF for UEFI support in Virtual Machines
+  boot.loader.efi.canTouchEfiVariables = true;
+  virtualisation.libvirtd.qemuOvmf.enable = true;
+
+  # Enable IOMMU for GPU passthrough
+  boot.kernelParams = [ "iommu=pt" "amd_iommu=on" "intel_iommu=on" ];
+
+  # Load the vfio kernel modules and bind GPU devices
+  boot.extraModulePackages = [ pkgs.vfio ];
+
+  # Specify which devices to bind to vfio-pci
+  boot.kernelModules = [ "vfio" "vfio_iommu_type1" "vfio_pci" "vfio_virqfd" ];
+
+  # Match devices to vfio-pci driver (replace with your GPU’s PCI addresses)
+  # You can get these with `lspci | grep VGA` for GPU and `lspci | grep Audio` for its audio device.
+  hardware.pci = {
+    # Example PCI IDs, replace with actual GPU and GPU Audio IDs
+    ids = [ "0000:01:00.0" "0000:01:00.1" ];      # GPU and GPU audio
+    modules = [ "vfio-pci" ];
+};
+
 # nVidia - https://nixos.wiki/wiki/Nvidia
 
   # GPU Passthrough - https://astrid.tech/2022/09/22/0/nixos-gpu-vfio/
@@ -196,9 +219,37 @@
 
 # Services
 
-  # Enable Virtualization
-  virtualisation.libvirtd.enable = true;
+# Enable virtualization with KVM
+virtualisation.libvirtd = {
+  enable = true;
+  qemuPackage = pkgs.qemu_kvm;  # Ensure you use the KVM-enabled QEMU
+
+  # Find the path needed here with this command: nix-store -q --outputs $(nix-instantiate '<nixpkgs>' -A ovmf)
+  extraConfig = ''
+    nvram = "/nix/store/<path-to-ovmf>/OVMF_CODE.fd:/nix/store/<path-to-ovmf>/OVMF_VARS.fd";
+  '';
+
+  # Specify VM configurations
+  qemuOptions = ''
+    <domain>
+      <disk type='block' device='disk'>
+        <driver name='qemu' type='raw'/>
+        <source device='/dev/nvme1n1'/>  # Replace with your actual SSD device path
+        <target dev='vda' bus='virtio'/>
+        <address type='pci' domain='0x0000' bus='0x00' slot='0x04' function='0x0'/>
+      </disk>
+    </domain>
+  '';
+};
+
   programs.virt-manager.enable = true;
+  
+  # OpenRGB
+  services.openrgb.enable = true;
+
+  # Power Management for Intel CPUs
+  services.thermald.enable = true;       # Thermal management to prevent overheating
+  services.tlp.enable = true;            # Advanced power management for battery life
 
 # End
 }
