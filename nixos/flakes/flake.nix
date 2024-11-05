@@ -2,8 +2,10 @@
   description = "Home Manager configuration of jas";
 
   inputs = {
-    # Specify the source of Home Manager and Nixpkgs.
+    # NixOS Unstable Channel
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    # Home Manager
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";

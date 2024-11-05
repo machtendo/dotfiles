@@ -16,7 +16,7 @@
 
       # Endpont Configuration Files
       #./endpoints/dell.nix
-      ./endpoints/lenovo-legion-9i.nix
+      ./devices/endpoints/lenovo-legion-9i.nix
     ];
 
 # Boot - Splash Screen
