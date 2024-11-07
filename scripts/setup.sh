@@ -2,16 +2,16 @@
 
 # NixOS Unstable Channel
 
-    #echo "Switching to NixOS Unstable Channel..."
+    echo "Switching to NixOS Unstable Channel..."
 
     # Add NixOS Unstable Channel
-    #sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos
+    sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos
 
     # Update Channels
-    #sudo nix-channel --update
+    sudo nix-channel --update
 
     # Rebuild & Upgrade
-    #sudo nixos-rebuild switch --upgrade
+    sudo nixos-rebuild switch --upgrade
 
 # Home Manager Standalone
 
