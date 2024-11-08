@@ -74,15 +74,11 @@
     description = "Jason";
     extraGroups = [ "networkmanager" "wheel" "libvirtd"];
     packages = with pkgs; [
-      alacritty           # GUI Terminal Application
-      alacritty-theme     # Color Schemes for Alacritty
       vlc                 # GUI Video Player
-      brave               # GUI Web Browser
       parsec-bin          # GUI Low-latency Remote Access Client
       heroic              # Video Game Platform
       chiaki              # GUI PS Remote Play Client
       godot_4             # GUI 2D/3D Game Engine
-      vscode              # GUI Visual Studio Code, IDE
       qbittorrent         # GUI Torrent Client
       gimp                # GNU Image Manipulation Program
       libreoffice         # GUI Productivity Suite
@@ -94,7 +90,6 @@
       protonup-qt         # GUI Manage Proton Compatibility
       starship            # Customizable Shell Prompt
       qemu                # Virtual Machines
-      rustup              # Rust Toolchain Installer
     ];
   };
 
