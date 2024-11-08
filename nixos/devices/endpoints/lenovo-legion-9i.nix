@@ -94,9 +94,6 @@
     };
   };
 
-# Lenovo Legion - Power Management, Fan Control, RGB, etc.
-  linuxKernel.packages.linux_latest_libre.lenovo-legion-module
-
 # System Settings
 
   # Enable the X11 windowing system.
@@ -189,6 +186,9 @@
 
   # Packages - System Profile
   environment.systemPackages = with pkgs; [
+
+  # Lenovo Legion - Power Management, Fan Control, RGB, etc.
+  linuxKernel.packages.linux_latest_libre.lenovo-legion-module
 
   # Desktop Environment: KDE Plasma
    kdePackages.kate                     # GUI Text Editor, IDE
