@@ -1,5 +1,5 @@
 {
-  description = "Home Manager configuration of jas";
+  #description = "Home Manager configuration of jas";
 
   inputs = {
     # NixOS Unstable Channel
