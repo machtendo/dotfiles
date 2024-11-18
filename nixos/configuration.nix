@@ -98,13 +98,13 @@
   # Packages - System Profile
   environment.systemPackages = with pkgs; [
    btop               # CLI System Process Monitor
-   cron		      # Scheduling Daemon
+   cron		            # Scheduling Daemon
    curl               # CLI File Transfer
    fastfetch          # CLI System Information
    git                # CLI Version Control
    neovim             # CLI Text Editor
    openssl            # SSL & TLS Encryption
-   warp-terminal      # Terminal Application
+   kitty              # Terminal Application
    wget               # CLI File Transfer
   ];
 
