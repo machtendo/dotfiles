@@ -105,6 +105,7 @@
    neovim             # CLI Text Editor
    openssl            # SSL & TLS Encryption
    kitty              # Terminal Application
+   kitty-themes       # Terminal Application Themes
    wget               # CLI File Transfer
   ];
 
