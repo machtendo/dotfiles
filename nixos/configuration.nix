@@ -15,8 +15,8 @@
       #./servers/forge.nix
 
       # Endpont Configuration Files
-      ./devices/endpoints/dell.nix
-      #./devices/endpoints/lenovo-legion-9i.nix
+      #./devices/endpoints/dell.nix
+      ./devices/endpoints/lenovo-legion-9i.nix
     ];
 
 # Boot - Splash Screen
