@@ -30,7 +30,7 @@
     # Example PCI IDs, replace with actual GPU and GPU Audio IDs
   #  ids = [ "0000:01:00.0" "0000:01:00.1" ];      # GPU and GPU audio
   #  modules = [ "vfio-pci" ];
-};
+  #};
 
 # Drivers
 
