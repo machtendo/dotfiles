@@ -83,13 +83,13 @@
   # nVidia Prime - 
   hardware.nvidia.prime = {
     #sync.enable = true;            # Note: Cannot enable Sync and Offload modes simultaneously
-		offload = {
-			enable = true;
-			enableOffloadCmd = true;
     # Make sure to use the correct Bus ID values for your system!
     nvidiaBusId = "PCI:1:0:0";     # nVidia GPU
     intelBusId = "PCI:0:2:0";      # Intel GPU (Integrated)
-   #amdgpuBusId = "PCI:54:0:0";   # AMD GPU
+    #amdgpuBusId = "PCI:54:0:0";   # AMD GPU
+    offload = {
+      enable = true;
+      enableOffloadCmd = true;
     };
   };
 
