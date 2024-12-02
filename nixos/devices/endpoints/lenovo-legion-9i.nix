@@ -232,7 +232,7 @@
     #  </disk>
     #</domain>
   #'';
-};
+ #};
 
 #  programs.virt-manager.enable = true;
   
