@@ -154,17 +154,18 @@
     description = "Jason";
     extraGroups = [ "networkmanager" "wheel" "libvirtd"];
     packages = with pkgs; [
-      vlc                 # GUI Video Player
-      brave               # GUI Web Browser
-      parsec-bin          # GUI Low-latency Remote Access Client
-      gimp                # GNU Image Manipulation Program
-      lenovo-legion       # Power, Fan, RGB Control for Lenovo Legion - https://github.com/johnfanv2/LenovoLegionLinux
-      libreoffice         # GUI Productivity Suite
-      github-desktop      # GUI GitHub Client
-      proton-pass         # GUI Proton Pass Desktop
-      protonvpn-gui       # GUI Proton VPN
-      starship            # Customizable Shell Prompt
-      qemu                # Virtual Machines
+      vlc                         # GUI Video Player
+      brave                       # GUI Web Browser
+      parsec-bin                  # GUI Low-latency Remote Access Client
+      gimp                        # GNU Image Manipulation Program
+      globalprotect-openconnect   # GlobalProtect VPN Client
+      lenovo-legion               # Power, Fan, RGB Control for Lenovo Legion - https://github.com/johnfanv2/LenovoLegionLinux
+      libreoffice                 # GUI Productivity Suite
+      github-desktop              # GUI GitHub Client
+      proton-pass                 # GUI Proton Pass Desktop
+      protonvpn-gui               # GUI Proton VPN
+      starship                    # Customizable Shell Prompt
+      qemu                        # Virtual Machines
     ];
   };
 
