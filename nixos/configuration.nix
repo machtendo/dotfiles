@@ -21,8 +21,8 @@
 
 # Boot - Splash Screen
 
-  boot.plymouth.enable = true;
-  boot.plymouth.theme = "bgrt";
+  #boot.plymouth.enable = true;
+  #boot.plymouth.theme = "bgrt";
 
 # System Settings  
   
@@ -120,7 +120,10 @@
   # };
 
 # Services
-    
+  
+  # Enable Flatpak
+  services.flatpak.enable = true;
+
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
