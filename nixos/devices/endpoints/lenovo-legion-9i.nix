@@ -13,23 +13,23 @@
 # Kernel / Boot
   
   # Install OVMF for UEFI support in Virtual Machines
-  boot.loader.efi.canTouchEfiVariables = true;
+  #boot.loader.efi.canTouchEfiVariables = true;
 
   # Enable IOMMU for GPU passthrough
-  boot.kernelParams = [ "iommu=pt" "amd_iommu=on" "intel_iommu=on" ];
+  #boot.kernelParams = [ "iommu=pt" "amd_iommu=on" "intel_iommu=on" ];
 
   # Load the vfio kernel modules and bind GPU devices
-  boot.extraModulePackages = [ pkgs.vfio ];
+  #boot.extraModulePackages = [ pkgs.vfio ];
 
   # Specify which devices to bind to vfio-pci
-  boot.kernelModules = [ "vfio" "vfio_iommu_type1" "vfio_pci" "vfio_virqfd" ];
+  #boot.kernelModules = [ "vfio" "vfio_iommu_type1" "vfio_pci" "vfio_virqfd" ];
 
   # Match devices to vfio-pci driver (replace with your GPU’s PCI addresses)
   # You can get these with `lspci | grep VGA` for GPU and `lspci | grep Audio` for its audio device.
-  hardware.pci = {
+  #hardware.pci = {
     # Example PCI IDs, replace with actual GPU and GPU Audio IDs
-    ids = [ "0000:01:00.0" "0000:01:00.1" ];      # GPU and GPU audio
-    modules = [ "vfio-pci" ];
+  #  ids = [ "0000:01:00.0" "0000:01:00.1" ];      # GPU and GPU audio
+  #  modules = [ "vfio-pci" ];
 };
 
 # Drivers
@@ -157,25 +157,15 @@
     description = "Jason";
     extraGroups = [ "networkmanager" "wheel" "libvirtd"];
     packages = with pkgs; [
-      alacritty           # GUI Terminal Application
-      alacritty-theme     # Color Schemes for Alacritty
       vlc                 # GUI Video Player
       brave               # GUI Web Browser
       parsec-bin          # GUI Low-latency Remote Access Client
-      heroic              # Video Game Platform
-      chiaki              # GUI PS Remote Play Client
-      godot_4             # GUI 2D/3D Game Engine
-      vscode              # GUI Visual Studio Code, IDE
-      qbittorrent         # GUI Torrent Client
       gimp                # GNU Image Manipulation Program
       lenovo-legion       # Power, Fan, RGB Control for Lenovo Legion - https://github.com/johnfanv2/LenovoLegionLinux
       libreoffice         # GUI Productivity Suite
-      discord             # GUI Discord Chat Client
-      betterdiscordctl    # Discord Modifications
       github-desktop      # GUI GitHub Client
       proton-pass         # GUI Proton Pass Desktop
       protonvpn-gui       # GUI Proton VPN
-      protonup-qt         # GUI Manage Proton Compatibility
       starship            # Customizable Shell Prompt
       qemu                # Virtual Machines
     ];
@@ -209,9 +199,6 @@
 
 # Applications & Modules
 
-  # Steam
-  programs.steam.enable = true;
-
   # SUID Wrappers
   # programs.mtr.enable = true;
   # programs.gnupg.agent = {
@@ -222,12 +209,12 @@
 # Services
 
 # Enable virtualization with KVM
-virtualisation.libvirtd = {
-  enable = true;
-  qemuPackage = pkgs.qemu_kvm;  # Ensure you use the KVM-enabled QEMU
+#virtualisation.libvirtd = {
+#  enable = true;
+#  qemuPackage = pkgs.qemu_kvm;  # Ensure you use the KVM-enabled QEMU
 
   # Enable OVMF for UEFI support in Virtual Machines
-  qemuOvmf.enable = true; # Add this line to enable OVMF
+#  qemuOvmf.enable = true; # Add this line to enable OVMF
 
   # Find the path needed here with this command: nix-store -q --outputs $(nix-instantiate '<nixpkgs>' -A ovmf)
   #extraConfig = ''
@@ -247,7 +234,7 @@ virtualisation.libvirtd = {
   #'';
 };
 
-  programs.virt-manager.enable = true;
+#  programs.virt-manager.enable = true;
   
   # OpenRGB
   services.openrgb.enable = true;
