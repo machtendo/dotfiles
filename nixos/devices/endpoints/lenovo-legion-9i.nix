@@ -35,7 +35,7 @@
 # Drivers
 
   # Touchpad Support
-  services.xserver.libinput = true;
+  services.libinput.enable = true;
 
   # nVidia - https://nixos.wiki/wiki/Nvidia
 
