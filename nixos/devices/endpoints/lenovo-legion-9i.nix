@@ -244,8 +244,9 @@
   services.tlp.enable = true;            # Advanced power management for battery life
 
   # Bluetooth
-  services.bluetooth.enable = true;
-  services.pipewire.bluetooth.enable = true;
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+  services.blueman.enable = true;
 
 # End
 }
