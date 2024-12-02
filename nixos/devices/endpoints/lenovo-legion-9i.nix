@@ -88,9 +88,9 @@
 			enable = true;
 			enableOffloadCmd = true;
     # Make sure to use the correct Bus ID values for your system!
-    nvidiaBusId = "PCI:14:0:0";     # nVidia GPU
-    intelBusId = "PCI:0:2:0";       # Intel GPU (Integrated)
-    # amdgpuBusId = "PCI:54:0:0";   # AMD GPU
+    nvidiaBusId = "PCI:1:0:0";     # nVidia GPU
+    intelBusId = "PCI:0:2:0";      # Intel GPU (Integrated)
+   #amdgpuBusId = "PCI:54:0:0";   # AMD GPU
     };
   };
 
@@ -231,20 +231,20 @@ virtualisation.libvirtd = {
   qemuOvmf.enable = true; # Add this line to enable OVMF
 
   # Find the path needed here with this command: nix-store -q --outputs $(nix-instantiate '<nixpkgs>' -A ovmf)
-  extraConfig = ''
-    nvram = "/nix/store/<path-to-ovmf>/OVMF_CODE.fd:/nix/store/<path-to-ovmf>/OVMF_VARS.fd";
-  '';
+  #extraConfig = ''
+   #nvram = "/nix/store/<path-to-ovmf>/OVMF_CODE.fd:/nix/store/<path-to-ovmf>/OVMF_VARS.fd";
+   #'';
 
   # Specify VM configurations
-  qemuOptions = ''
-    <domain>
-      <disk type='block' device='disk'>
-        <driver name='qemu' type='raw'/>
-        <source device='/dev/nvme1n1'/>  # Replace with your actual SSD device path
-        <target dev='vda' bus='virtio'/>
-        <address type='pci' domain='0x0000' bus='0x00' slot='0x04' function='0x0'/>
-      </disk>
-    </domain>
+  #  qemuOptions = ''
+    #<<domain>
+    #  <disk type='block' device='disk'>
+    #    <driver name='qemu' type='raw'/>
+    #    <source device='/dev/nvme1n1'/>  # Replace with your actual SSD device path
+    #    <target dev='vda' bus='virtio'/>
+    #    <address type='pci' domain='0x0000' bus='0x00' slot='0x04' function='0x0'/>
+    #  </disk>
+    #</domain>
   '';
 };
 
