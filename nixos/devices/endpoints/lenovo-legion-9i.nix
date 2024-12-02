@@ -237,7 +237,7 @@ virtualisation.libvirtd = {
 
   # Specify VM configurations
   #  qemuOptions = ''
-    #<<domain>
+    #<domain>
     #  <disk type='block' device='disk'>
     #    <driver name='qemu' type='raw'/>
     #    <source device='/dev/nvme1n1'/>  # Replace with your actual SSD device path
@@ -245,7 +245,7 @@ virtualisation.libvirtd = {
     #    <address type='pci' domain='0x0000' bus='0x00' slot='0x04' function='0x0'/>
     #  </disk>
     #</domain>
-  '';
+  #'';
 };
 
   programs.virt-manager.enable = true;
