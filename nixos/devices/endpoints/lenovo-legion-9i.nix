@@ -39,7 +39,7 @@
   # GPU Passthrough - https://astrid.tech/2022/09/22/0/nixos-gpu-vfio/
 
   # Enable OpenGL
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
   };
 
