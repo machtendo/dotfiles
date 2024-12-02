@@ -237,7 +237,7 @@
 #  programs.virt-manager.enable = true;
   
   # OpenRGB
-  services.openrgb.enable = true;
+  services.hardware.openrgb.enable = true;
 
   # Power Management for Intel CPUs
   services.thermald.enable = true;       # Thermal management to prevent overheating
