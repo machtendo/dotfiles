@@ -55,11 +55,11 @@
     # Enable this if you have graphical corruption issues or application crashes after waking
     # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead 
     # of just the bare essentials.
-    #powerManagement.enable = false;
+    powerManagement.enable = false;
 
     # Fine-grained power management. Turns off GPU when not in use.
     # Experimental and only works on modern Nvidia GPUs (Turing or newer).
-    #powerManagement.finegrained = false;
+    powerManagement.finegrained = false;
 
     # Use the NVidia open source kernel module (not to be confused with the
     # independent third-party "nouveau" open source driver).
@@ -237,8 +237,10 @@
   services.hardware.openrgb.enable = true;
 
   # Power Management for Intel CPUs
-  services.thermald.enable = true;       # Thermal management to prevent overheating
-  services.tlp.enable = true;            # Advanced power management for battery life
+  services.thermald.enable = true;                # Thermal management to prevent overheating
+  services.power-profiles-daemon.enable = false;  # Explicitly disable power-profiles to use tlp
+  services.tlp.enable = true;                     # Advanced power management for battery life
+
 
   # Bluetooth
   hardware.bluetooth.enable = true;
