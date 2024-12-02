@@ -14,7 +14,6 @@
   
   # Install OVMF for UEFI support in Virtual Machines
   boot.loader.efi.canTouchEfiVariables = true;
-  virtualisation.libvirtd.qemuOvmf.enable = true;
 
   # Enable IOMMU for GPU passthrough
   boot.kernelParams = [ "iommu=pt" "amd_iommu=on" "intel_iommu=on" ];
