@@ -204,6 +204,9 @@
   #   enableSSHSupport = true;
   # };
 
+# Steam
+  programs.steam.enable = true;
+
 # Services
 
 # Enable virtualization with KVM
