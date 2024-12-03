@@ -161,6 +161,7 @@
       lenovo-legion               # Power, Fan, RGB Control for Lenovo Legion - https://github.com/johnfanv2/LenovoLegionLinux
       libreoffice                 # GUI Productivity Suite
       github-desktop              # GUI GitHub Client
+      globalprotect-openconnect   # GUI GlobalProtect VPN
       proton-pass                 # GUI Proton Pass Desktop
       protonvpn-gui               # GUI Proton VPN
       starship                    # Customizable Shell Prompt
