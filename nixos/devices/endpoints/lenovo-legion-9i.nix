@@ -158,7 +158,6 @@
       brave                       # GUI Web Browser
       parsec-bin                  # GUI Low-latency Remote Access Client
       gimp                        # GNU Image Manipulation Program
-      globalprotect-openconnect   # GlobalProtect VPN Client
       lenovo-legion               # Power, Fan, RGB Control for Lenovo Legion - https://github.com/johnfanv2/LenovoLegionLinux
       libreoffice                 # GUI Productivity Suite
       github-desktop              # GUI GitHub Client
@@ -208,6 +207,9 @@
   programs.steam.enable = true;
 
 # Services
+
+# GlobalProtect VPN
+  services.globalprotect.enable = true;
 
 # Enable virtualization with KVM
 #virtualisation.libvirtd = {
